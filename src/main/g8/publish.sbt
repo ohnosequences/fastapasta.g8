@@ -6,7 +6,7 @@ import ReleaseKeys._
 
 publishMavenStyle := false
 
-bucketSuffix := "$bucket-suffix$"
+bucketSuffix := "$bucketSuffix$"
 
 isPrivate := true
 
@@ -23,5 +23,5 @@ releaseProcess <<= thisProjectRef apply { ref =>
 
 nextVersion := { ver => sbtrelease.Version(ver).map(_.bumpMinor.string).getOrElse(versionFormatError) }
 
-addCommandAlias("fastapasta-publish", ";reload;release with-defaults")
+addCommandAlias("fastapasta-publish", ";reload; release with-defaults")
 
