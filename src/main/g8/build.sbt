@@ -16,10 +16,8 @@ resolvers += Resolver.sonatypeRepo("snapshots")
 
 metadataObject := name.value
 
-mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
-{
+mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) => {
   case "about.html" => MergeStrategy.first
   case "avsl.conf" => MergeStrategy.first
   case x => old(x)
-}
-}
+} }
